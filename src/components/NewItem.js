@@ -20,7 +20,7 @@ const NewItem = (props) => {
         Enter an item to do:
         <input type="text" name="new-item" value={newItem} onChange={handleChange} />
       </label>
-      <input type="submit" name="submit" />
+      <input type="submit" name="submit" value="Add"/>
     </form>
   );
 };
