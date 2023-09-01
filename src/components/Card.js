@@ -2,6 +2,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
+    // render a card component
     <div className="todo-card">
       <div className="todo">{props.todo}</div>
       <div className="actions">
