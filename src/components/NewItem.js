@@ -15,12 +15,14 @@ const NewItem = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Enter an item to do:
-        <input type="text" name="new-item" value={newItem} onChange={handleChange} />
-      </label>
-      <input type="submit" name="submit" value="Add"/>
+    <form className="input-form" onSubmit={handleSubmit}>
+      <div>
+        <label className="form-label">Enter an item to do:</label>
+      </div>
+      <div className="input-box-submit">
+        <input className="input-box" type="text" name="new-item" value={newItem} onChange={handleChange} />
+        <input className="submit-button button" type="submit" name="submit" value="Add" />
+      </div>
     </form>
   );
 };
