@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Card from "./components/Card";
+import NewItem from "./components/NewItem";
 
 const App = () => {
   const [stillToDo, setStillToDo] = useState(["wash the dishes", "dry the dishes"]);
@@ -23,9 +24,7 @@ const App = () => {
   };
 
   const handleSubmit = (newItem) => {
-    const newArray = [...stillToDo];
-    newArray.push(newItem);
-    setStillToDo(newArray);
+    setStillToDo([...stillToDo, newItem]);
   };
 
   return (
@@ -74,28 +73,6 @@ const App = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-const NewItem = (props) => {
-  const [newItem, setNewItem] = useState("");
-
-  const handleChange = (e) => {
-    setNewItem(e.target.value);
-  };
-
-  return (
-    <form
-      onSubmit={() => {
-        props.handleSubmit(newItem);
-      }}
-    >
-      <label>
-        Enter an item to do:
-        <input type="text" name="new-item" value={newItem} onChange={handleChange} />
-      </label>
-      <input type="submit" name="submit" />
-    </form>
   );
 };
 
